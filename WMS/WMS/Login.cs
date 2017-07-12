@@ -59,5 +59,11 @@ namespace WMS
         {
 
         }
+
+        private void lSign_Click(object sender, EventArgs e)
+        {
+            Sign sign = new Sign();
+            sign.ShowDialog();
+        }
     }
 }

@@ -134,6 +134,7 @@
             this.lSign.Size = new System.Drawing.Size(29, 12);
             this.lSign.TabIndex = 9;
             this.lSign.Text = "注册";
+            this.lSign.Click += new System.EventHandler(this.lSign_Click);
             // 
             // Login
             // 

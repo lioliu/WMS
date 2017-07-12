@@ -7,3 +7,4 @@ C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.Properties.Reso
 C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.csproj.GenerateResource.Cache
 C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.exe
 C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.pdb
+C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.Sign.resources

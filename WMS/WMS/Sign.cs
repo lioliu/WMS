@@ -12,7 +12,9 @@ namespace WMS
 {
     public partial class Sign : Form
     {
-        string CAPTCHA = string.Empty;
+        string Captcha = string.Empty;
+        const int CaptchaLength = 6;
+        int timecount = 0;
         public Sign()
         {
             InitializeComponent();
@@ -33,13 +35,9 @@ namespace WMS
         {
             
             // check email format
-            if (!Regex.IsMatch(textBox1.Text, @"^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"))
-            {
-                MessageBox.Show("邮箱格式错误！");
-                return;
-            }
+          
             //check CAPTCHA
-            if (!textBox2.Equals(CAPTCHA))
+            if (!textBox2.Equals(Captcha))
             {
                 MessageBox.Show("验证码错误");
             }
@@ -51,6 +49,37 @@ namespace WMS
             //check     
         }
 
-     
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(textBox1.Text, @"^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"))
+            {
+                MessageBox.Show("邮箱格式错误！");
+                return;
+            }
+            else
+            {
+                Captcha = CAPTCHA.Number(CaptchaLength);
+                Console.WriteLine(Captcha);
+                button3.Enabled = false;
+                timecount = 60;
+                button3.Text = timecount.ToString();
+                timer1.Enabled = true;
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (timecount>0)
+            {
+                timecount--;
+                button3.Text = timecount.ToString();
+            }
+            else
+            {
+                button3.Text = "重新发送";
+                button3.Enabled = true;
+                timer1.Enabled = false;
+            }
+        }
     }
 }
