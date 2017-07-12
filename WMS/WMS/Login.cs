@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 
 namespace WMS
 {
@@ -20,6 +21,8 @@ namespace WMS
         private void Login_Load(object sender, EventArgs e)
         {
             cbxType.SelectedIndex = 0;
+            //test code
+            //MessageBox.Show(DBUtility.GetData("select GETDATE()").Rows[0][0].ToString());
         }
 
         private void cbxType_SelectedIndexChanged(object sender, EventArgs e)
