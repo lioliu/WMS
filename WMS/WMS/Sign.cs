@@ -59,7 +59,7 @@ namespace WMS
             else
             {
                 Captcha = CAPTCHA.Number(CaptchaLength);
-                Console.WriteLine(Captcha);
+                Email.Sent(textBox1.Text, Captcha);
                 button3.Enabled = false;
                 timecount = 60;
                 button3.Text = timecount.ToString();

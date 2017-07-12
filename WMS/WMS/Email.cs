@@ -13,9 +13,9 @@ namespace WMS
         public static bool Sent(string EmailAdress, string Message)
         {
             MailAddress from, to;
-            from = new MailAddress("仓储管理系统", "系统管理员");
+            from = new MailAddress("1660615304@qq.com", "系统管理员");
             to = new MailAddress(EmailAdress, "user");
-            NetworkCredential account = new NetworkCredential("744596028@qq.com", "`6y4r7u0p9o4r");
+            NetworkCredential account = new NetworkCredential("1660615304@qq.com", "19970110cyk");
             MailMessage mail = new MailMessage()
             {
                 From = from,
