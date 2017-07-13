@@ -100,5 +100,26 @@ namespace WMS
             }
             #endregion
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DBUtility.ExecuteSQL($"update stock_in set stock_in_checked = 1,stock_in_pay = {double.Parse(textBox1.Text) * double.Parse(textBox2.Text)} where stock_in_id = '{comboBox2.SelectedItem.ToString()}'");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DBUtility.ExecuteSQL($"update stock_out set stock_out_checked = 1,stock_out_pay = {double.Parse(textBox3.Text)*double.Parse(textBox4.Text)} where stock_in_id2 = '{comboBox2.SelectedItem.ToString()}'");
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox3.Text = "100";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = "100";
+        }
     }
 }
