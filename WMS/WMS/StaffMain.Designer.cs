@@ -70,13 +70,14 @@
             // 密码修改ToolStripMenuItem
             // 
             this.密码修改ToolStripMenuItem.Name = "密码修改ToolStripMenuItem";
-            this.密码修改ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.密码修改ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.密码修改ToolStripMenuItem.Text = "密码修改";
+            this.密码修改ToolStripMenuItem.Click += new System.EventHandler(this.密码修改ToolStripMenuItem_Click);
             // 
             // 信息修改ToolStripMenuItem
             // 
             this.信息修改ToolStripMenuItem.Name = "信息修改ToolStripMenuItem";
-            this.信息修改ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.信息修改ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.信息修改ToolStripMenuItem.Text = "信息修改";
             // 
             // 员工类型修改ToolStripMenuItem
@@ -99,21 +100,21 @@
             // 仓库信息ToolStripMenuItem
             // 
             this.仓库信息ToolStripMenuItem.Name = "仓库信息ToolStripMenuItem";
-            this.仓库信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.仓库信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.仓库信息ToolStripMenuItem.Text = "仓库信息";
             this.仓库信息ToolStripMenuItem.Click += new System.EventHandler(this.仓库信息ToolStripMenuItem_Click);
             // 
             // 仓储区域信息ToolStripMenuItem
             // 
             this.仓储区域信息ToolStripMenuItem.Name = "仓储区域信息ToolStripMenuItem";
-            this.仓储区域信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.仓储区域信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.仓储区域信息ToolStripMenuItem.Text = "仓储区域信息";
             this.仓储区域信息ToolStripMenuItem.Click += new System.EventHandler(this.仓储区域信息ToolStripMenuItem_Click);
             // 
             // 区域种类信息ToolStripMenuItem
             // 
             this.区域种类信息ToolStripMenuItem.Name = "区域种类信息ToolStripMenuItem";
-            this.区域种类信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.区域种类信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.区域种类信息ToolStripMenuItem.Text = "区域种类信息";
             this.区域种类信息ToolStripMenuItem.Click += new System.EventHandler(this.区域种类信息ToolStripMenuItem_Click);
             // 

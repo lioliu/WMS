@@ -12,8 +12,10 @@ namespace WMS
 {
     public partial class CustomerMain : Form
     {
+        string Email;
         public CustomerMain(string email)
         {
+            Email = email;
             InitializeComponent();
         }
 
@@ -21,6 +23,12 @@ namespace WMS
         {
             Product product = new Product();
             product.ShowDialog();
+        }
+
+        private void 修改密码ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePsd change = new ChangePsd(Email, 1);
+            change.ShowDialog();
         }
     }
 }

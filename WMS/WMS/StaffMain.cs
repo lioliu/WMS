@@ -12,9 +12,11 @@ namespace WMS
 {
     public partial class StaffMain : Form
     {
+        string ID = string.Empty;
         public StaffMain(string ID)
         {
             InitializeComponent();
+            this.ID = ID;
         }
 
         private void 仓库信息ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,6 +42,12 @@ namespace WMS
         {
             StaffType stafftype = new StaffType();
             stafftype.ShowDialog();
+        }
+
+        private void 密码修改ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePsd change = new ChangePsd(ID, 2);
+            change.ShowDialog();
         }
     }
 }
