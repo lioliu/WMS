@@ -70,19 +70,19 @@
             // 密码修改ToolStripMenuItem
             // 
             this.密码修改ToolStripMenuItem.Name = "密码修改ToolStripMenuItem";
-            this.密码修改ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.密码修改ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.密码修改ToolStripMenuItem.Text = "密码修改";
             // 
             // 信息修改ToolStripMenuItem
             // 
             this.信息修改ToolStripMenuItem.Name = "信息修改ToolStripMenuItem";
-            this.信息修改ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.信息修改ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.信息修改ToolStripMenuItem.Text = "信息修改";
             // 
             // 员工类型修改ToolStripMenuItem
             // 
             this.员工类型修改ToolStripMenuItem.Name = "员工类型修改ToolStripMenuItem";
-            this.员工类型修改ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.员工类型修改ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.员工类型修改ToolStripMenuItem.Text = "员工类型修改";
             // 
             // 仓库信息配置ToolStripMenuItem
@@ -100,6 +100,7 @@
             this.仓库信息ToolStripMenuItem.Name = "仓库信息ToolStripMenuItem";
             this.仓库信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.仓库信息ToolStripMenuItem.Text = "仓库信息";
+            this.仓库信息ToolStripMenuItem.Click += new System.EventHandler(this.仓库信息ToolStripMenuItem_Click);
             // 
             // 仓储区域信息ToolStripMenuItem
             // 

@@ -12,9 +12,43 @@ namespace WMS
 {
     public partial class WareHouse : Form
     {
+        DataTable data;
         public WareHouse()
         {
             InitializeComponent();
+            ShowData();
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            int index = dataGridView1.SelectedRows[0].Index;
+            textBox1.Text = data.Rows[index][0].ToString();
+            textBox2.Text = data.Rows[index][1].ToString();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DBUtility.ExecuteSQL($"insert into  [WMS].[dbo].[WareHouse] select  right('0000000000'+cast(max(Warehouse_ID)+1 as varchar),10),'{textBox2.Text}' from [WMS].[dbo].[WareHouse] ");
+            ShowData();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DBUtility.ExecuteSQL($"update [WMS].[dbo].[WareHouse] set Warehouse_Name = '{textBox2.Text}'  where Warehouse_ID = '{textBox1.Text}'  ");
+            ShowData();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DBUtility.ExecuteSQL($"delete from [WMS].[dbo].[WareHouse] where Warehouse_ID = '{textBox1.Text}'  ");
+            ShowData();
+        }
+
+        private void ShowData()
+        {
+            data = DBUtility.GetData("SELECT [Warehouse_ID] 仓库编号 ,[Warehouse_Name] 仓库名 FROM [WMS].[dbo].[WareHouse]");
+            dataGridView1.DataSource = data;
         }
     }
 }

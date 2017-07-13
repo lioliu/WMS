@@ -16,5 +16,12 @@ namespace WMS
         {
             InitializeComponent();
         }
+
+        private void 仓库信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //todo
+            WareHouse wareHouse = new WareHouse();
+            wareHouse.ShowDialog();
+        }
     }
 }
