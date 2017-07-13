@@ -135,6 +135,7 @@
             this.巡检ToolStripMenuItem.Name = "巡检ToolStripMenuItem";
             this.巡检ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.巡检ToolStripMenuItem.Text = "巡检";
+            this.巡检ToolStripMenuItem.Click += new System.EventHandler(this.巡检ToolStripMenuItem_Click);
             // 
             // StaffMain
             // 

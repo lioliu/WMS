@@ -21,7 +21,7 @@ namespace WMS
 
         private void 仓库信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //todo
+            
             WareHouse wareHouse = new WareHouse();
             wareHouse.ShowDialog();
         }
@@ -48,6 +48,12 @@ namespace WMS
         {
             ChangePsd change = new ChangePsd(ID, 2);
             change.ShowDialog();
+        }
+
+        private void 巡检ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RoutingInspection form = new RoutingInspection();
+            form.ShowDialog();
         }
     }
 }
