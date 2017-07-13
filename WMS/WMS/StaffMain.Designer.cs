@@ -113,6 +113,7 @@
             this.区域种类信息ToolStripMenuItem.Name = "区域种类信息ToolStripMenuItem";
             this.区域种类信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.区域种类信息ToolStripMenuItem.Text = "区域种类信息";
+            this.区域种类信息ToolStripMenuItem.Click += new System.EventHandler(this.区域种类信息ToolStripMenuItem_Click);
             // 
             // 入库单处理ToolStripMenuItem
             // 

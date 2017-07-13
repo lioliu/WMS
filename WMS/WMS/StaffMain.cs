@@ -23,5 +23,11 @@ namespace WMS
             WareHouse wareHouse = new WareHouse();
             wareHouse.ShowDialog();
         }
+
+        private void 区域种类信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WareAreaType wareAreaType = new WareAreaType();
+            wareAreaType.ShowDialog();
+        }
     }
 }
