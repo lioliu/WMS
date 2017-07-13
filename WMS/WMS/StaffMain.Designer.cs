@@ -107,6 +107,7 @@
             this.仓储区域信息ToolStripMenuItem.Name = "仓储区域信息ToolStripMenuItem";
             this.仓储区域信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.仓储区域信息ToolStripMenuItem.Text = "仓储区域信息";
+            this.仓储区域信息ToolStripMenuItem.Click += new System.EventHandler(this.仓储区域信息ToolStripMenuItem_Click);
             // 
             // 区域种类信息ToolStripMenuItem
             // 

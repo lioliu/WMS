@@ -82,11 +82,23 @@
     <Compile Include="StaffMain.Designer.cs">
       <DependentUpon>StaffMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="WareArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WareArea.Designer.cs">
+      <DependentUpon>WareArea.cs</DependentUpon>
+    </Compile>
     <Compile Include="WareHouse.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WareHouse.Designer.cs">
       <DependentUpon>WareHouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WareAreaType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WareAreaType.Designer.cs">
+      <DependentUpon>WareAreaType.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CustomerMain.resx">
       <DependentUpon>CustomerMain.cs</DependentUpon>
@@ -111,6 +123,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StaffMain.resx">
       <DependentUpon>StaffMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WareArea.resx">
+      <DependentUpon>WareArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WareAreaType.resx">
+      <DependentUpon>WareAreaType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WareHouse.resx">
       <DependentUpon>WareHouse.cs</DependentUpon>
