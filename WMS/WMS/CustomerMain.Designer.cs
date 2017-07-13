@@ -33,11 +33,7 @@
             this.修改信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.入库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.创建入库单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.查询入库单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.出库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.创建出库单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.查询出库单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查询库存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.商品ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -81,51 +77,22 @@
             // 
             // 入库ToolStripMenuItem
             // 
-            this.入库ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.创建入库单ToolStripMenuItem,
-            this.查询入库单ToolStripMenuItem});
             this.入库ToolStripMenuItem.Name = "入库ToolStripMenuItem";
             this.入库ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.入库ToolStripMenuItem.Text = "入库";
             // 
-            // 创建入库单ToolStripMenuItem
-            // 
-            this.创建入库单ToolStripMenuItem.Name = "创建入库单ToolStripMenuItem";
-            this.创建入库单ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.创建入库单ToolStripMenuItem.Text = "创建入库单";
-            // 
-            // 查询入库单ToolStripMenuItem
-            // 
-            this.查询入库单ToolStripMenuItem.Name = "查询入库单ToolStripMenuItem";
-            this.查询入库单ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.查询入库单ToolStripMenuItem.Text = "查询入库单";
-            // 
             // 出库ToolStripMenuItem
             // 
-            this.出库ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.创建出库单ToolStripMenuItem,
-            this.查询出库单ToolStripMenuItem});
             this.出库ToolStripMenuItem.Name = "出库ToolStripMenuItem";
             this.出库ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.出库ToolStripMenuItem.Text = "出库";
-            // 
-            // 创建出库单ToolStripMenuItem
-            // 
-            this.创建出库单ToolStripMenuItem.Name = "创建出库单ToolStripMenuItem";
-            this.创建出库单ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.创建出库单ToolStripMenuItem.Text = "创建出库单";
-            // 
-            // 查询出库单ToolStripMenuItem
-            // 
-            this.查询出库单ToolStripMenuItem.Name = "查询出库单ToolStripMenuItem";
-            this.查询出库单ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.查询出库单ToolStripMenuItem.Text = "查询出库单";
             // 
             // 查询库存ToolStripMenuItem
             // 
             this.查询库存ToolStripMenuItem.Name = "查询库存ToolStripMenuItem";
             this.查询库存ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.查询库存ToolStripMenuItem.Text = "查询库存";
+            this.查询库存ToolStripMenuItem.Click += new System.EventHandler(this.查询库存ToolStripMenuItem_Click);
             // 
             // 商品ToolStripMenuItem
             // 
@@ -157,11 +124,7 @@
         private System.Windows.Forms.ToolStripMenuItem 修改信息ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 修改密码ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 入库ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 创建入库单ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 查询入库单ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 出库ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 创建出库单ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 查询出库单ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查询库存ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 商品ToolStripMenuItem;
     }

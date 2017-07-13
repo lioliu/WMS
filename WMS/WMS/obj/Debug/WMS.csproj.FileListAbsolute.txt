@@ -15,3 +15,7 @@ C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.WareHouse.resou
 C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.WareArea.resources
 C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.WareAreaType.resources
 C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.StaffType.resources
+C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.ChangePsd.resources
+C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.CreateStockin.resources
+C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.CreateStockOut.resources
+C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.RoutingInspection.resources

@@ -30,5 +30,16 @@ namespace WMS
             ChangePsd change = new ChangePsd(Email, 1);
             change.ShowDialog();
         }
+
+        private void 创建出库单ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateStockOut form = new CreateStockOut(Email);
+                form.ShowDialog();
+        }
+
+        private void 查询库存ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

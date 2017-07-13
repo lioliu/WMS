@@ -12,7 +12,7 @@ namespace WMS
 {
     public partial class CreateStockin : Form
     {
-        DataTable data;
+        DataTable data = null;
         public CreateStockin()
         {
             data.Columns.Add(new DataColumn("编号"));
@@ -65,6 +65,7 @@ namespace WMS
         private void button3_Click(object sender, EventArgs e)
         {
             //todo
+
         }
     }
 }
