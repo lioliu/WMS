@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.账户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.密码修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,8 +40,6 @@
             this.仓库信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.仓储区域信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.区域种类信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.入库单处理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.出库单处理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.巡检ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.库存查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -67,6 +65,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -80,10 +79,9 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.账户管理ToolStripMenuItem,
             this.仓库信息配置ToolStripMenuItem,
-            this.入库单处理ToolStripMenuItem,
-            this.出库单处理ToolStripMenuItem,
             this.巡检ToolStripMenuItem,
-            this.库存查询ToolStripMenuItem});
+            this.库存查询ToolStripMenuItem,
+            this.刷新ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(723, 25);
@@ -150,18 +148,6 @@
             this.区域种类信息ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.区域种类信息ToolStripMenuItem.Text = "区域种类信息";
             this.区域种类信息ToolStripMenuItem.Click += new System.EventHandler(this.区域种类信息ToolStripMenuItem_Click);
-            // 
-            // 入库单处理ToolStripMenuItem
-            // 
-            this.入库单处理ToolStripMenuItem.Name = "入库单处理ToolStripMenuItem";
-            this.入库单处理ToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
-            this.入库单处理ToolStripMenuItem.Text = "入库单处理";
-            // 
-            // 出库单处理ToolStripMenuItem
-            // 
-            this.出库单处理ToolStripMenuItem.Name = "出库单处理ToolStripMenuItem";
-            this.出库单处理ToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
-            this.出库单处理ToolStripMenuItem.Text = "出库单处理";
             // 
             // 巡检ToolStripMenuItem
             // 
@@ -396,23 +382,30 @@
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Enabled = false;
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            chartArea8.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea8);
+            legend8.Enabled = false;
+            legend8.Name = "Legend1";
+            this.chart1.Legends.Add(legend8);
             this.chart1.Location = new System.Drawing.Point(11, 20);
             this.chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.IsValueShownAsLabel = true;
-            series4.Label = "#VALX：#VAL";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart1.Series.Add(series4);
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series8.IsValueShownAsLabel = true;
+            series8.Label = "#VALX：#VAL";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(316, 180);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
+            // 
+            // 刷新ToolStripMenuItem
+            // 
+            this.刷新ToolStripMenuItem.Name = "刷新ToolStripMenuItem";
+            this.刷新ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.刷新ToolStripMenuItem.Text = "刷新";
+            this.刷新ToolStripMenuItem.Click += new System.EventHandler(this.刷新ToolStripMenuItem_Click);
             // 
             // StaffMain
             // 
@@ -454,8 +447,6 @@
         private System.Windows.Forms.ToolStripMenuItem 仓库信息ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 仓储区域信息ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 区域种类信息ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 入库单处理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 出库单处理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 巡检ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 库存查询ToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -481,5 +472,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.ToolStripMenuItem 刷新ToolStripMenuItem;
     }
 }
