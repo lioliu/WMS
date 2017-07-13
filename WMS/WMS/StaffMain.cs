@@ -16,7 +16,8 @@ namespace WMS
         public StaffMain(string ID)
         {
             InitializeComponent();
-            this.ID = ID;
+            this.ID = "0000000000"+ID;
+            this.ID = this.ID.Substring(this.ID.Length - 10);
         }
 
         private void 仓库信息ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,12 +71,15 @@ namespace WMS
         private void button1_Click(object sender, EventArgs e)
         {
             DBUtility.ExecuteSQL($"update stock_in set stock_in_checked = 1,stock_in_pay = {double.Parse(textBox1.Text) * double.Parse(textBox2.Text)} where stock_in_id = '{comboBox2.SelectedItem.ToString()}'");
+            MessageBox.Show("确认成功");
+            UpdateInfo();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             DBUtility.ExecuteSQL($"update stock_out set stock_out_checked = 1,stock_out_pay = {double.Parse(textBox3.Text) * double.Parse(textBox4.Text)} where stock_in_id2 = '{comboBox2.SelectedItem.ToString()}'");
-
+            MessageBox.Show("确认成功");
+            UpdateInfo();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -108,7 +112,7 @@ namespace WMS
             #region set pie pic
             List<string> xData = new List<string>() { "未用", "已用", };
             double total = double.Parse(DBUtility.GetData("select Convert(decimal(18,2),(sum(WareArea_High*WareArea_Long*WareArea_Wide)/1000000),2) from WareArea").Rows[0][0].ToString());
-            double used = double.Parse(DBUtility.GetData("select Convert(decimal(18,2),isnull(sum(a.Ware_detail_number*b.Product_Hgih*b.Product_Long*b.Product_Wide),0),2) from Ware_Detail a left join Product b on a.Product_ID = b.Product_ID").Rows[0][0].ToString());
+            double used = double.Parse(DBUtility.GetData("select Convert(decimal(18,2),isnull(sum(a.Ware_detail_number*b.Product_Hgih*b.Product_Long*b.Product_Wide),0)/1000000,2) from Ware_Detail a left join Product b on a.Product_ID = b.Product_ID").Rows[0][0].ToString());
             List<double> yData = new List<double>() { total - used, used };
             chart1.Series[0]["PieLabelStyle"] = "Outside";//将文字移到外侧
             chart1.Series[0]["PieLineColor"] = "Black";//绘制黑色的连线。

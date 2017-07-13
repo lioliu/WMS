@@ -30,7 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.账户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.修改信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.修改密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.入库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.出库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,17 +76,10 @@
             // 账户管理ToolStripMenuItem
             // 
             this.账户管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.修改信息ToolStripMenuItem,
             this.修改密码ToolStripMenuItem});
             this.账户管理ToolStripMenuItem.Name = "账户管理ToolStripMenuItem";
             this.账户管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.账户管理ToolStripMenuItem.Text = "账户管理";
-            // 
-            // 修改信息ToolStripMenuItem
-            // 
-            this.修改信息ToolStripMenuItem.Name = "修改信息ToolStripMenuItem";
-            this.修改信息ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.修改信息ToolStripMenuItem.Text = "修改信息";
             // 
             // 修改密码ToolStripMenuItem
             // 
@@ -297,7 +289,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 账户管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 修改信息ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 修改密码ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 入库ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 出库ToolStripMenuItem;

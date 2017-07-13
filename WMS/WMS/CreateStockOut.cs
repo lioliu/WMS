@@ -40,12 +40,16 @@ namespace WMS
             int sn = 1;
             for (int i = 0; i < data.Rows.Count; i++)
             {
-                if (int.Parse(data.Rows[i][0].ToString()) == 1) // need to stock out
+                if ((bool)data.Rows[i][0]) // need to stock out
                 {
                     DBUtility.ExecuteSQL($"insert into stock_out_detail VALUES('{stock_out_id}','{data.Rows[i][1].ToString()}','{sn++}','{data.Rows[i][4].ToString()}')");
                 }
             }
             #endregion
+            MessageBox.Show("提交成功");
+            this.Close();
+            this.Dispose();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
