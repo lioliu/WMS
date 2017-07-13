@@ -16,8 +16,7 @@ namespace WMS
         public WareArea()
         {
             InitializeComponent();
-            comboBox1.SelectedIndex = 1;
-            comboBox2.SelectedIndex = 1;
+           
             ShowData();
             DataTable temp = DBUtility.GetData("select warehouse_name from dbo.warehouse");
             for (int i = 0; i < temp.Rows.Count; i++)
@@ -29,6 +28,8 @@ namespace WMS
             {
                 comboBox2.Items.Add(temp.Rows[i][0].ToString());
             }
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
 
         }
 

@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.账户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.密码修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.信息修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.员工类型修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.仓库信息配置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.仓库信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +91,6 @@
             // 
             this.账户管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.密码修改ToolStripMenuItem,
-            this.信息修改ToolStripMenuItem,
             this.员工类型修改ToolStripMenuItem});
             this.账户管理ToolStripMenuItem.Name = "账户管理ToolStripMenuItem";
             this.账户管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
@@ -104,12 +102,6 @@
             this.密码修改ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.密码修改ToolStripMenuItem.Text = "密码修改";
             this.密码修改ToolStripMenuItem.Click += new System.EventHandler(this.密码修改ToolStripMenuItem_Click);
-            // 
-            // 信息修改ToolStripMenuItem
-            // 
-            this.信息修改ToolStripMenuItem.Name = "信息修改ToolStripMenuItem";
-            this.信息修改ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.信息修改ToolStripMenuItem.Text = "信息修改";
             // 
             // 员工类型修改ToolStripMenuItem
             // 
@@ -382,20 +374,20 @@
             // 
             // chart1
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea8);
-            legend8.Enabled = false;
-            legend8.Name = "Legend1";
-            this.chart1.Legends.Add(legend8);
+            chartArea9.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea9);
+            legend9.Enabled = false;
+            legend9.Name = "Legend1";
+            this.chart1.Legends.Add(legend9);
             this.chart1.Location = new System.Drawing.Point(11, 20);
             this.chart1.Name = "chart1";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series8.IsValueShownAsLabel = true;
-            series8.Label = "#VALX：#VAL";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chart1.Series.Add(series8);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series9.IsValueShownAsLabel = true;
+            series9.Label = "#VALX：#VAL";
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chart1.Series.Add(series9);
             this.chart1.Size = new System.Drawing.Size(316, 180);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -441,7 +433,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 账户管理ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 密码修改ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 信息修改ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 员工类型修改ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 仓库信息配置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 仓库信息ToolStripMenuItem;
