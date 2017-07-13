@@ -40,8 +40,6 @@
             this.查询出库单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.查询库存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.商品ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.浏览商品ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.添加商品ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,13 +69,13 @@
             // 修改信息ToolStripMenuItem
             // 
             this.修改信息ToolStripMenuItem.Name = "修改信息ToolStripMenuItem";
-            this.修改信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.修改信息ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.修改信息ToolStripMenuItem.Text = "修改信息";
             // 
             // 修改密码ToolStripMenuItem
             // 
             this.修改密码ToolStripMenuItem.Name = "修改密码ToolStripMenuItem";
-            this.修改密码ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.修改密码ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.修改密码ToolStripMenuItem.Text = "修改密码";
             // 
             // 入库ToolStripMenuItem
@@ -88,18 +86,17 @@
             this.入库ToolStripMenuItem.Name = "入库ToolStripMenuItem";
             this.入库ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.入库ToolStripMenuItem.Text = "入库";
-            //this.入库ToolStripMenuItem.Click += new System.EventHandler(this.入库ToolStripMenuItem_Click);
             // 
             // 创建入库单ToolStripMenuItem
             // 
             this.创建入库单ToolStripMenuItem.Name = "创建入库单ToolStripMenuItem";
-            this.创建入库单ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.创建入库单ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.创建入库单ToolStripMenuItem.Text = "创建入库单";
             // 
             // 查询入库单ToolStripMenuItem
             // 
             this.查询入库单ToolStripMenuItem.Name = "查询入库单ToolStripMenuItem";
-            this.查询入库单ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.查询入库单ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.查询入库单ToolStripMenuItem.Text = "查询入库单";
             // 
             // 出库ToolStripMenuItem
@@ -114,13 +111,13 @@
             // 创建出库单ToolStripMenuItem
             // 
             this.创建出库单ToolStripMenuItem.Name = "创建出库单ToolStripMenuItem";
-            this.创建出库单ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.创建出库单ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.创建出库单ToolStripMenuItem.Text = "创建出库单";
             // 
             // 查询出库单ToolStripMenuItem
             // 
             this.查询出库单ToolStripMenuItem.Name = "查询出库单ToolStripMenuItem";
-            this.查询出库单ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.查询出库单ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.查询出库单ToolStripMenuItem.Text = "查询出库单";
             // 
             // 查询库存ToolStripMenuItem
@@ -131,24 +128,10 @@
             // 
             // 商品ToolStripMenuItem
             // 
-            this.商品ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.浏览商品ToolStripMenuItem,
-            this.添加商品ToolStripMenuItem});
             this.商品ToolStripMenuItem.Name = "商品ToolStripMenuItem";
             this.商品ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.商品ToolStripMenuItem.Text = "商品";
-            // 
-            // 浏览商品ToolStripMenuItem
-            // 
-            this.浏览商品ToolStripMenuItem.Name = "浏览商品ToolStripMenuItem";
-            this.浏览商品ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.浏览商品ToolStripMenuItem.Text = "浏览商品";
-            // 
-            // 添加商品ToolStripMenuItem
-            // 
-            this.添加商品ToolStripMenuItem.Name = "添加商品ToolStripMenuItem";
-            this.添加商品ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.添加商品ToolStripMenuItem.Text = "添加商品";
+            this.商品ToolStripMenuItem.Click += new System.EventHandler(this.商品ToolStripMenuItem_Click);
             // 
             // CustomerMain
             // 
@@ -180,7 +163,5 @@
         private System.Windows.Forms.ToolStripMenuItem 查询出库单ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 查询库存ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 商品ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 浏览商品ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 添加商品ToolStripMenuItem;
     }
 }

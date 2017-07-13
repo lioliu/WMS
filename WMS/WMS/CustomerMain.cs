@@ -17,6 +17,10 @@ namespace WMS
             InitializeComponent();
         }
 
-      
+        private void 商品ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Product product = new Product();
+            product.ShowDialog();
+        }
     }
 }
