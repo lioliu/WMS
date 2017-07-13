@@ -97,12 +97,14 @@ namespace WMS
 
         private void UpdateInfo()
         {
+
             DataTable data = DBUtility.GetData($"  select stock_in_ID 入库单号,stock_in_Checked 入库单确认,stock_in_Pay 金额,stock_in_Payed 是否支付,stock_in_Finished 是否完成 from stock_in where customer_id = '{ID}'");
             dataGridView1.DataSource = data;
             DataTable data1 = DBUtility.GetData($"  select stock_in_ID2 出库单号,stock_out_Checked 出库单确认,stock_out_Pay 金额,stock_out_Payed 是否支付,stock_out_Finished 是否完成 from stock_out where customer_id = '{ID}'");
             dataGridView2.DataSource = data1;
 
             pay = DBUtility.GetData($" select stock_in_id2, Stock_out_pay from stock_out where stock_out_Payed = 0 and Customer_ID = '{ID}' union select stock_in_id, Stock_in_pay from stock_in where stock_in_Payed = 0 and Customer_ID = '{ID}'");
+            comboBox1.Items.Clear();
             for (int i = 0; i < pay.Rows.Count; i++)
             {
                 comboBox1.Items.Add(pay.Rows[i][0].ToString());
@@ -114,6 +116,12 @@ namespace WMS
         private void 刷新ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UpdateInfo();
+        }
+
+        private void 出库ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateStockOut form = new CreateStockOut(Email);
+            form.ShowDialog();
         }
     }
 }

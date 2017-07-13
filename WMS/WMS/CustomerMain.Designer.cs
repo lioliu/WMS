@@ -108,6 +108,7 @@
             this.出库ToolStripMenuItem.Name = "出库ToolStripMenuItem";
             this.出库ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.出库ToolStripMenuItem.Text = "出库";
+            this.出库ToolStripMenuItem.Click += new System.EventHandler(this.出库ToolStripMenuItem_Click);
             // 
             // 查询库存ToolStripMenuItem
             // 
