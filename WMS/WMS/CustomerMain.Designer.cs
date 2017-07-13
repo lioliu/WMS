@@ -65,13 +65,13 @@
             // 修改信息ToolStripMenuItem
             // 
             this.修改信息ToolStripMenuItem.Name = "修改信息ToolStripMenuItem";
-            this.修改信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.修改信息ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.修改信息ToolStripMenuItem.Text = "修改信息";
             // 
             // 修改密码ToolStripMenuItem
             // 
             this.修改密码ToolStripMenuItem.Name = "修改密码ToolStripMenuItem";
-            this.修改密码ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.修改密码ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.修改密码ToolStripMenuItem.Text = "修改密码";
             this.修改密码ToolStripMenuItem.Click += new System.EventHandler(this.修改密码ToolStripMenuItem_Click);
             // 
@@ -80,6 +80,7 @@
             this.入库ToolStripMenuItem.Name = "入库ToolStripMenuItem";
             this.入库ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.入库ToolStripMenuItem.Text = "入库";
+            this.入库ToolStripMenuItem.Click += new System.EventHandler(this.入库ToolStripMenuItem_Click);
             // 
             // 出库ToolStripMenuItem
             // 

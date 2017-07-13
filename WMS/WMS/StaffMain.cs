@@ -21,7 +21,7 @@ namespace WMS
 
         private void 仓库信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             WareHouse wareHouse = new WareHouse();
             wareHouse.ShowDialog();
         }
@@ -54,6 +54,51 @@ namespace WMS
         {
             RoutingInspection form = new RoutingInspection();
             form.ShowDialog();
+        }
+
+        private void 库存查询ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StockStaff form = new StockStaff();
+            form.ShowDialog();
+        }
+
+        private void StaffMain_Load(object sender, EventArgs e)
+        {
+            #region set pie pic
+            List<string> xData = new List<string>() { "未用", "已用", };
+            double total = double.Parse(DBUtility.GetData("select Convert(decimal(18,2),(sum(WareArea_High*WareArea_Long*WareArea_Wide)/1000000),2) from WareArea").Rows[0][0].ToString());
+            double used = double.Parse(DBUtility.GetData("select Convert(decimal(18,2),isnull(sum(a.Ware_detail_number*b.Product_Hgih*b.Product_Long*b.Product_Wide),0),2) from Ware_Detail a left join Product b on a.Product_ID = b.Product_ID").Rows[0][0].ToString());
+            List<double> yData = new List<double>() { total - used, used };
+            chart1.Series[0]["PieLabelStyle"] = "Outside";//将文字移到外侧
+            chart1.Series[0]["PieLineColor"] = "Black";//绘制黑色的连线。
+            chart1.Series[0].Points.DataBindXY(xData, yData);
+            #endregion
+
+            #region load stock list
+            DataTable temp = DBUtility.GetData($"select stock_in_id from stock_in where stock_in_checked = 0 and staff_id ='{ID}'");
+            for (int i = 0; i < temp.Rows.Count; i++)
+            {
+                comboBox1.Items.Add(temp.Rows[i][0].ToString());
+            }
+            temp = DBUtility.GetData($"select stock_in_id2 from stock_out where stock_out_checked = 0 and staff_id ='{ID}'");
+            for (int i = 0; i < temp.Rows.Count; i++)
+            {
+                comboBox2.Items.Add(temp.Rows[i][0].ToString());
+            }
+            #endregion
+
+            #region load routing list
+            temp = DBUtility.GetData("select wareArea_id from wareArea where GETDATE()-30 > Last_check_date and WareArea_ID in (select WareArea_ID from Ware_Detail)");
+            for (int i = 0; i < temp.Rows.Count; i++)
+            {
+                listBox1.Items.Add(temp.Rows[i][0].ToString());
+            }
+            temp = DBUtility.GetData("select wareArea_id from wareArea where GETDATE()-30 < Last_check_date or WareArea_ID not in (select WareArea_ID from Ware_Detail)");
+            for (int i = 0; i < temp.Rows.Count; i++)
+            {
+                listBox2.Items.Add(temp.Rows[i][0].ToString());
+            }
+            #endregion
         }
     }
 }

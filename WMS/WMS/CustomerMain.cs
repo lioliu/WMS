@@ -42,5 +42,11 @@ namespace WMS
             Stock form = new Stock(Email);
             form.ShowDialog();
         }
+
+        private void 入库ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateStockin form = new CreateStockin(Email);
+            form.ShowDialog();
+        }
     }
 }

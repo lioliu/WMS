@@ -32,7 +32,7 @@ namespace WMS
   " from Staff a left join (select Staff_id, isnull(count(*), 0) innumber from stock_in where stock_in_Checked = 0 group by staff_ID) b on a.staff_ID = b.staff_ID " +
   " left join(select Staff_id, count(*) outnumber from Stock_out where stock_out_Checked = 0 group by staff_ID ) c on a.staff_ID = c.staff_ID " +
   "order by 处理数量").Rows[0][1].ToString();
-            DBUtility.ExecuteSQL($"insert into stock_out select  right('00000000000000000000'+cast(max(stock_in_id2)+1 as varchar),20),'{freeStaff}','{Customer_ID}',getdate(),0,0,0,0 from stock_out   "); // pay price need to modi todo
+            DBUtility.ExecuteSQL($"insert into stock_out select  right('00000000000000000000'+cast(max(stock_in_id2)+1 as varchar),20),'{freeStaff}','{Customer_ID}',{dateTimePicker1.Value},0,0,0,0 from stock_out   "); // pay price need to modi todo
             #endregion
 
             #region stock out detail

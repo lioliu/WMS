@@ -12,9 +12,13 @@ namespace WMS
 {
     public partial class CreateStockin : Form
     {
+        string customerID;
         DataTable data = null;
-        public CreateStockin()
+        public CreateStockin(string email)
         {
+            this.customerID = DBUtility.GetData($"select customer_id from customer where customer_email = '{email}'").Rows[0][0].ToString();
+            InitializeComponent();
+            data = new DataTable();
             data.Columns.Add(new DataColumn("编号"));
             data.Columns.Add(new DataColumn("商品编号"));
             data.Columns.Add(new DataColumn("商品名称"));
@@ -32,7 +36,7 @@ namespace WMS
         private void button1_Click(object sender, EventArgs e)
         {
             data.Rows.Add();
-            data.Rows[data.Rows.Count - 1][0] = (data.Rows.Count + 1).ToString();
+            data.Rows[data.Rows.Count - 1][0] = (data.Rows.Count).ToString();
             data.Rows[data.Rows.Count - 1][1] = comboBox1.SelectedItem.ToString();
             data.Rows[data.Rows.Count - 1][2] = DBUtility.GetData($"select product_name from product where product_id ='{comboBox1.SelectedItem.ToString()}'").Rows[0][0].ToString();
             data.Rows[data.Rows.Count - 1][3] = textBox1.Text;
@@ -65,7 +69,20 @@ namespace WMS
         private void button3_Click(object sender, EventArgs e)
         {
             //todo
+            #region create stock list
+            string freeStaff = DBUtility.GetData("  select a.staff_id ,isnull(innumber + outnumber,0) 处理数量 " +
+ " from Staff a left join (select Staff_id, isnull(count(*), 0) innumber from stock_in where stock_in_Checked = 0 group by staff_ID) b on a.staff_ID = b.staff_ID " +
+ " left join(select Staff_id, count(*) outnumber from Stock_out where stock_out_Checked = 0 group by staff_ID ) c on a.staff_ID = c.staff_ID " +
+ "order by 处理数量").Rows[0][1].ToString();
+            DBUtility.ExecuteSQL($"insert into stock_in select  right('00000000000000000000'+cast(max(stock_in_id)+1 as varchar),20),'{freeStaff}','{customerID}',{dateTimePicker1.Value},0,0,0,0 from stock_out   "); // pay price need to modi todo
 
+            string stockInID = DBUtility.GetData("select right('00000000000000000000'+cast(max(stock_in_id) as varchar),20) from stock_in ").Rows[0][0].ToString();
+            int sn = 1;
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                DBUtility.ExecuteSQL($"insert into stock_in_detail VALUES('{stockInID}','{data.Rows[i][1].ToString()}','{sn++}','{data.Rows[i][3].ToString()}')");
+            }
+            #endregion
         }
     }
 }

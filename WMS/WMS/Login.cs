@@ -53,7 +53,10 @@ namespace WMS
                         if (Staff.Login(textBox1.Text, textBox2.Text))
                         {
                             main = new StaffMain(textBox1.Text);
-
+                            Hide();
+                            main.ShowDialog();
+                            Close();
+                            Dispose();
                         }
                         break;
                     }
@@ -62,17 +65,18 @@ namespace WMS
                         if (Customer.Login(textBox1.Text, textBox2.Text))
                         {
                             main = new CustomerMain(textBox1.Text);
-
+                            Hide();
+                            main.ShowDialog();
+                            Close();
+                            Dispose();
                         }
                         break;
                     }
                 default:
                     break;
             }
-            Hide();
-            main.ShowDialog();
-            Close();
-            Dispose();
+         
+           
         }
 
         private void lSign_Click(object sender, EventArgs e)

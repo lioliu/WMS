@@ -19,3 +19,5 @@ C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.ChangePsd.resou
 C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.CreateStockin.resources
 C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.CreateStockOut.resources
 C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.RoutingInspection.resources
+C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.Stock.resources
+C:\Users\74459\Desktop\数据库实训\WMS\WMS\WMS\obj\Debug\WMS.StockStaff.resources
