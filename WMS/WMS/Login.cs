@@ -57,7 +57,25 @@ namespace WMS
 
         private void bLogin_Click(object sender, EventArgs e)
         {
-
+            switch (cbxType.SelectedIndex)
+            {
+                case 0:
+                    {
+                        if (Staff.Login(textBox1.Text, textBox2.Text))
+                        {
+                            this.Close();
+                        }
+                        break;
+                    }
+                case 1: {
+                        if (Customer.Login(textBox1.Text,textBox2.Text))
+                        {
+                            this.Close();
+                        }
+                        break; }
+                default:
+                    break;
+            }
         }
 
         private void lSign_Click(object sender, EventArgs e)

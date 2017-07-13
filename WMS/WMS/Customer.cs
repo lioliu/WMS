@@ -37,5 +37,10 @@ namespace WMS
                 throw;
             }
         }
+
+        public static Boolean Login(string ID,string PSD)
+        {
+            return true;
+        }
     }
 }
