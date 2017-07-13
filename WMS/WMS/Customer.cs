@@ -40,7 +40,18 @@ namespace WMS
 
         public static Boolean Login(string ID,string PSD)
         {
-            return true;
+            if (DBUtility.GetData($"select * from dbo.customer where customer_email = '{ID}' and customer_psd = '{PSD}'").Rows.Count == 0)
+            {
+                System.Windows.Forms.MessageBox.Show("错误的邮箱或密码。");
+                return false;
+            }
+            else
+            {
+             
+                return true;
+
+            }
+       
         }
     }
 }

@@ -10,7 +10,19 @@ namespace WMS
     {
         public static Boolean Login(string ID, string PSD)
         {
-            return true;
+            ID = ("000000000" + ID);
+            ID = ID.Substring(ID.Length - 10);
+            if (DBUtility.GetData($"select * from dbo.staff where staff_id = '{ID}' and staff_psd = '{PSD}'").Rows.Count == 0)
+            {
+                System.Windows.Forms.MessageBox.Show("错误的用户名或密码。");
+                return false;
+            }
+            else
+            {
+             
+                return true;
+
+            }
         }
     }
 }

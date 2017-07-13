@@ -12,7 +12,7 @@ namespace WMS
 {
     public partial class CustomerMain : Form
     {
-        public CustomerMain()
+        public CustomerMain(string email)
         {
             InitializeComponent();
         }

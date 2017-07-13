@@ -12,7 +12,7 @@ namespace WMS
 {
     public partial class StaffMain : Form
     {
-        public StaffMain()
+        public StaffMain(string ID)
         {
             InitializeComponent();
         }

@@ -63,16 +63,27 @@ namespace WMS
                     {
                         if (Staff.Login(textBox1.Text, textBox2.Text))
                         {
-                            this.Close();
+                            StaffMain main = new StaffMain(textBox1.Text);
+                            Hide();
+                            main.ShowDialog();
+                            Close();
+                            Dispose();
                         }
                         break;
                     }
-                case 1: {
-                        if (Customer.Login(textBox1.Text,textBox2.Text))
+                case 1:
+                    {
+                        if (Customer.Login(textBox1.Text, textBox2.Text))
                         {
-                            this.Close();
+                            CustomerMain main = new CustomerMain(textBox1.Text);
+                            Hide();
+                            main.ShowDialog();
+                            Close();
+                            Dispose();
                         }
-                        break; }
+                     
+                        break;
+                    }
                 default:
                     break;
             }

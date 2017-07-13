@@ -47,6 +47,12 @@
   <ItemGroup>
     <Compile Include="CAPTCHA.cs" />
     <Compile Include="Customer.cs" />
+    <Compile Include="CustomerMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerMain.Designer.cs">
+      <DependentUpon>CustomerMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBUtility.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="Login.cs">
@@ -62,6 +68,13 @@
     </Compile>
     <Compile Include="Sign.Designer.cs">
       <DependentUpon>Sign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Staff.cs" />
+    <Compile Include="StaffMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffMain.Designer.cs">
+      <DependentUpon>StaffMain.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
