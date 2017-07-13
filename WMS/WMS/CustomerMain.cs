@@ -103,7 +103,7 @@ namespace WMS
             DataTable data1 = DBUtility.GetData($"  select stock_in_ID2 出库单号,stock_out_Checked 出库单确认,stock_out_Pay 金额,stock_out_Payed 是否支付,stock_out_Finished 是否完成 from stock_out where customer_id = '{ID}'");
             dataGridView2.DataSource = data1;
 
-            pay = DBUtility.GetData($" select stock_in_id2, Stock_out_pay from stock_out where stock_out_Payed = 0 and Customer_ID = '{ID}' union select stock_in_id, Stock_in_pay from stock_in where stock_in_Payed = 0 and Customer_ID = '{ID}'");
+            pay = DBUtility.GetData($" select stock_in_id2, Stock_out_pay from stock_out where stock_out_Payed = 0 and Customer_ID = '{ID}' and stock_out_checked = 1 union select stock_in_id, Stock_in_pay from stock_in where stock_in_Payed = 0 and Customer_ID = '{ID}' and stock_in_checked = 1");
             comboBox1.Items.Clear();
             for (int i = 0; i < pay.Rows.Count; i++)
             {
