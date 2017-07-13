@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace WMS
 {
-    public partial class WarehouseAreaType : Form
+    public partial class WareAreaType : Form
     {
-        public WarehouseAreaType()
+        public WareAreaType()
         {
             InitializeComponent();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WareAreaType_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

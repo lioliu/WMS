@@ -16,7 +16,7 @@ namespace WMS
         public Product()
         {
             InitializeComponent();
-             data = DBUtility.GetData("SELECT Product_ID 编号,Product_Name 名称,Product_tally 单位 , Product_Weight 重量 , Product_Long 长度 ,Product_Hgih 高度 , Product_Wide 宽度 , Product_Temperature 保存温度 , Product_humidity 保存湿度 FROM[WMS].[dbo].[Product]");
+            data = DBUtility.GetData("SELECT Product_ID 编号,Product_Name 名称,Product_tally 单位 , Product_Weight 重量 , Product_Long 长度 ,Product_Hgih 高度 , Product_Wide 宽度 , Product_Temperature 保存温度 , Product_humidity 保存湿度 FROM[WMS].[dbo].[Product]");
             dataGridView1.DataSource = data;
         }
 
@@ -27,30 +27,55 @@ namespace WMS
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-         
+
             data = DBUtility.GetData($"SELECT Product_ID 编号,Product_Name 名称,Product_tally 单位 , Product_Weight 重量 , Product_Long 长度 ,Product_Hgih 高度 , Product_Wide 宽度 , Product_Temperature 保存温度 , Product_humidity 保存湿度 FROM [WMS].[dbo].[Product] where Product_ID like '%{textBox1.Text}%' and Product_Name like '%{textBox2.Text}%' and Product_tally like '%{textBox3.Text}%' and Product_Weight like '%{textBox4.Text}%' and Product_Long like '%{textBox5.Text}%' and Product_Hgih like '%{textBox6.Text}%' and  Product_Wide like '%{textBox7.Text}%'  ");
             dataGridView1.DataSource = data;
         }
-
+        /// <summary>
+        /// insert
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            DBUtility.ExecuteSQL($"INSERT INTO [WMS].[dbo].[Product] select right('00000000000000000000'+cast(max(Product_ID)+1 as varchar),20),'{textBox17.Text}','{textBox16.Text}','{textBox15.Text}','{textBox14.Text}','{textBox13.Text}','{textBox12.Text}','{textBox11.Text}','{textBox10.Text}' from [WMS].[dbo].[Product]");
+            string Product_Temperature = textBox11.Text.Equals(string.Empty)?"NULL": $"'{textBox11.Text}'";
+            string Product_humidity = textBox10.Text.Equals(string.Empty) ? "NULL" : $"'{textBox10.Text}'"; 
+
+            DBUtility.ExecuteSQL($"INSERT INTO [WMS].[dbo].[Product] select right('00000000000000000000'+cast(max(Product_ID)+1 as varchar),20),'{textBox17.Text}','{textBox16.Text}','{textBox15.Text}','{textBox14.Text}','{textBox13.Text}','{textBox12.Text}',{Product_Temperature},{Product_humidity} from [WMS].[dbo].[Product]");
             data = DBUtility.GetData("SELECT Product_ID 编号,Product_Name 名称,Product_tally 单位 , Product_Weight 重量 , Product_Long 长度 ,Product_Hgih 高度 , Product_Wide 宽度 , Product_Temperature 保存温度 , Product_humidity 保存湿度 FROM [WMS].[dbo].[Product]");
             dataGridView1.DataSource = data;
 
         }
-
+        /// <summary>
+        /// delete
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
-            //delete
-            DBUtility.ExecuteSQL($"delete from  [WMS].[dbo].[Product] where Product_ID ='{textBox18.Text}' ");
-            data = DBUtility.GetData("SELECT Product_ID 编号,Product_Name 名称,Product_tally 单位 , Product_Weight 重量 , Product_Long 长度 ,Product_Hgih 高度 , Product_Wide 宽度 , Product_Temperature 保存温度 , Product_humidity 保存湿度 FROM [WMS].[dbo].[Product]");
-            dataGridView1.DataSource = data;
-        }
+            try
+            {
 
+                DBUtility.ExecuteSQL($"delete from  [WMS].[dbo].[Product] where Product_ID ='{textBox18.Text}' ");
+                data = DBUtility.GetData("SELECT Product_ID 编号,Product_Name 名称,Product_tally 单位 , Product_Weight 重量 , Product_Long 长度 ,Product_Hgih 高度 , Product_Wide 宽度 , Product_Temperature 保存温度 , Product_humidity 保存湿度 FROM [WMS].[dbo].[Product]");
+                dataGridView1.DataSource = data;
+            }
+            catch (Exception )
+            {
+                MessageBox.Show("该物品还在库存中存在不能删除");
+            }
+        }
+        /// <summary>
+        /// update
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-            DBUtility.ExecuteSQL($"UPDATE [WMS].[dbo].[Product] SET Product_Name = '{textBox17.Text}',Product_tally = '{textBox16.Text}',Product_Weight ='{textBox15.Text}',Product_Long ='{textBox14.Text}',Product_Hgih='{textBox13.Text}',Product_Wide = '{textBox12.Text}',Product_Temperature='{textBox11.Text}',Product_humidity='{textBox10.Text}'  where Product_ID ='{textBox18.Text}' ");
+            string Product_Temperature = textBox11.Text.Equals(string.Empty) ? "NULL" : $"'{textBox11.Text}'";
+            string Product_humidity = textBox10.Text.Equals(string.Empty) ? "NULL" : $"'{textBox10.Text}'";
+
+            DBUtility.ExecuteSQL($"UPDATE [WMS].[dbo].[Product] SET Product_Name = '{textBox17.Text}',Product_tally = '{textBox16.Text}',Product_Weight ='{textBox15.Text}',Product_Long ='{textBox14.Text}',Product_Hgih='{textBox13.Text}',Product_Wide = '{textBox12.Text}',Product_Temperature= {Product_Temperature} ,Product_humidity = {Product_humidity}  where Product_ID ='{textBox18.Text}' ");
             data = DBUtility.GetData("SELECT Product_ID 编号,Product_Name 名称,Product_tally 单位 , Product_Weight 重量 , Product_Long 长度 ,Product_Hgih 高度 , Product_Wide 宽度 , Product_Temperature 保存温度 , Product_humidity 保存湿度 FROM [WMS].[dbo].[Product]");
             dataGridView1.DataSource = data;
         }
