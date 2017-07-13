@@ -13,9 +13,9 @@ namespace WMS
         public static bool Sent(string EmailAdress, string Message)
         {
             MailAddress from, to;
-            from = new MailAddress("1660615304@qq.com", "系统管理员");
+            from = new MailAddress("18721711827@163.com", "系统管理员");
             to = new MailAddress(EmailAdress, "user");
-            NetworkCredential account = new NetworkCredential("1660615304@qq.com", "19970110cyk");
+            NetworkCredential account = new NetworkCredential("18721711827@163.com", "19961018cym");
             MailMessage mail = new MailMessage()
             {
                 From = from,
@@ -25,7 +25,7 @@ namespace WMS
                 DeliveryNotificationOptions = DeliveryNotificationOptions.OnSuccess
             };
             mail.To.Add(to);
-            SmtpClient client = new SmtpClient("smtp.qq.com")
+            SmtpClient client = new SmtpClient("smtp.163.com")
             {
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 UseDefaultCredentials = true,

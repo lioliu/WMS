@@ -18,6 +18,7 @@ namespace WMS
         public Sign()
         {
             InitializeComponent();
+            button1.Enabled = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -37,20 +38,30 @@ namespace WMS
             // check email format
           
             //check CAPTCHA
-            if (!textBox2.Equals(Captcha))
+            if (!textBox2.Text.Equals(Captcha))
             {
                 MessageBox.Show("验证码错误");
+                return;
             }
             //check PassWord
             if (!textBox3.Text.Equals(textBox4.Text))
             {
                 MessageBox.Show("两次密码不同");
+                return;
             }
-            //check     
+            Customer customer = new Customer(textBox1.Text,textBox3.Text,textBox5.Text);
+            if (customer.SignUp())
+            {
+                MessageBox.Show("注册成功");
+                Close();
+                Dispose();
+            }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             if (!Regex.IsMatch(textBox1.Text, @"^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"))
             {
                 MessageBox.Show("邮箱格式错误！");
@@ -58,6 +69,7 @@ namespace WMS
             }
             else
             {
+                button1.Enabled = true;
                 Captcha = CAPTCHA.Number(CaptchaLength);
                 Email.Sent(textBox1.Text, Captcha);
                 button3.Enabled = false;
