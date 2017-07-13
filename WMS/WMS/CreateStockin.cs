@@ -23,13 +23,12 @@ namespace WMS
             data.Columns.Add(new DataColumn("商品编号"));
             data.Columns.Add(new DataColumn("商品名称"));
             data.Columns.Add(new DataColumn("数量"));
-            InitializeComponent();
             dataGridView1.DataSource = data;
-
             DataTable temp = DBUtility.GetData("select Product_id from product");
             for (int i = 0; i < temp.Rows.Count; i++)
             {
                 comboBox1.Items.Add(temp.Rows[i][0].ToString());
+                Console.WriteLine(temp.Rows[i][0].ToString());
             }
         }
 
@@ -73,8 +72,8 @@ namespace WMS
             string freeStaff = DBUtility.GetData("  select a.staff_id ,isnull(innumber + outnumber,0) 处理数量 " +
  " from Staff a left join (select Staff_id, isnull(count(*), 0) innumber from stock_in where stock_in_Checked = 0 group by staff_ID) b on a.staff_ID = b.staff_ID " +
  " left join(select Staff_id, count(*) outnumber from Stock_out where stock_out_Checked = 0 group by staff_ID ) c on a.staff_ID = c.staff_ID " +
- "order by 处理数量").Rows[0][1].ToString();
-            DBUtility.ExecuteSQL($"insert into stock_in select  right('00000000000000000000'+cast(max(stock_in_id)+1 as varchar),20),'{freeStaff}','{customerID}',{dateTimePicker1.Value},0,0,0,0 from stock_out   "); // pay price need to modi todo
+ "order by 处理数量").Rows[0][0].ToString();
+            DBUtility.ExecuteSQL($"insert into stock_in select  right('00000000000000000000'+cast(isnull(max(stock_in_id),0)+1 as varchar),20),'{customerID}','{freeStaff}',{dateTimePicker1.Value.ToShortDateString()},0,0,0,0 from stock_in   "); // pay price need to modi todo
 
             string stockInID = DBUtility.GetData("select right('00000000000000000000'+cast(max(stock_in_id) as varchar),20) from stock_in ").Rows[0][0].ToString();
             int sn = 1;
@@ -83,6 +82,14 @@ namespace WMS
                 DBUtility.ExecuteSQL($"insert into stock_in_detail VALUES('{stockInID}','{data.Rows[i][1].ToString()}','{sn++}','{data.Rows[i][3].ToString()}')");
             }
             #endregion
+            MessageBox.Show("添加成功");
+            this.Close();
+            this.Dispose();
+        }
+
+        private void CreateStockin_Load(object sender, EventArgs e)
+        {
+          
         }
     }
 }
