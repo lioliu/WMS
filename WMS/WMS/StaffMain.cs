@@ -35,5 +35,11 @@ namespace WMS
             WareArea wareArea = new WareArea();
             wareArea.ShowDialog();
         }
+
+        private void 员工类型修改ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaffType stafftype = new StaffType();
+            stafftype.ShowDialog();
+        }
     }
 }
