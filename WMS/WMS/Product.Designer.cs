@@ -233,6 +233,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(965, 355);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // groupBox2
             // 
@@ -396,6 +397,7 @@
             // 
             this.textBox18.Location = new System.Drawing.Point(53, 28);
             this.textBox18.Name = "textBox18";
+            this.textBox18.ReadOnly = true;
             this.textBox18.Size = new System.Drawing.Size(100, 21);
             this.textBox18.TabIndex = 21;
             // 
