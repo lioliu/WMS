@@ -39,7 +39,8 @@ namespace WMS
 
         private void 查询库存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Stock form = new Stock(Email);
+            form.ShowDialog();
         }
     }
 }
