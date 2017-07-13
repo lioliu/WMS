@@ -21,8 +21,6 @@ namespace WMS
         private void Login_Load(object sender, EventArgs e)
         {
             cbxType.SelectedIndex = 0;
-            //test code
-            //MessageBox.Show(DBUtility.GetData("select GETDATE()").Rows[0][0].ToString());
         }
 
         private void cbxType_SelectedIndexChanged(object sender, EventArgs e)
@@ -47,8 +45,6 @@ namespace WMS
 
         }
 
-
-
         private void Reset()
         {
             textBox1.Text = string.Empty;
@@ -57,17 +53,15 @@ namespace WMS
 
         private void bLogin_Click(object sender, EventArgs e)
         {
+            Form main = null;
             switch (cbxType.SelectedIndex)
             {
                 case 0:
                     {
                         if (Staff.Login(textBox1.Text, textBox2.Text))
                         {
-                            StaffMain main = new StaffMain(textBox1.Text);
-                            Hide();
-                            main.ShowDialog();
-                            Close();
-                            Dispose();
+                            main = new StaffMain(textBox1.Text);
+
                         }
                         break;
                     }
@@ -75,18 +69,18 @@ namespace WMS
                     {
                         if (Customer.Login(textBox1.Text, textBox2.Text))
                         {
-                            CustomerMain main = new CustomerMain(textBox1.Text);
-                            Hide();
-                            main.ShowDialog();
-                            Close();
-                            Dispose();
+                            main = new CustomerMain(textBox1.Text);
+
                         }
-                     
                         break;
                     }
                 default:
                     break;
             }
+            Hide();
+            main.ShowDialog();
+            Close();
+            Dispose();
         }
 
         private void lSign_Click(object sender, EventArgs e)
